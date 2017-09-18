@@ -1,3 +1,5 @@
+## CarND Controls MPC Project
+
 ### Self Driving Car Engineering Nanodegree
 
 ---
@@ -101,7 +103,7 @@ Below is the code snippet from main.cpp
 As the waypoints are in vehicle co-ordinate system, a third order polynomial is then fitted.
 Below is the code snippet from main.cpp
 
-	  Eigen::VectorXd x_temp = Eigen::Map<Eigen::VectorXd, Eigen::Unaligned>(ptsx.data(), ptsx.size());
+          Eigen::VectorXd x_temp = Eigen::Map<Eigen::VectorXd, Eigen::Unaligned>(ptsx.data(), ptsx.size());
           Eigen::VectorXd y_temp = Eigen::Map<Eigen::VectorXd, Eigen::Unaligned>(ptsy.data(), ptsy.size());
 
           // Measure Polynomial Coefficients.
@@ -125,7 +127,7 @@ Steps used:
 
 Following is the code snippet from main.cpp showing the latency consideration.
 
-	  double steer_value;
+          double steer_value;
           double throttle_value;
 
           v *= 1.609344      // Convert Speed
@@ -140,7 +142,7 @@ Following is the code snippet from main.cpp showing the latency consideration.
           psi += - v * steer_value/Lf * latency;
           v += throttle_value * latency;
 		  
-	  // Calculate cte & epsi
+          // Calculate cte & epsi
           double cte = polyeval(coeffs, 0);
           double epsi = psi - atan(coeffs[1]);
 
